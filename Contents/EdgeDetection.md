@@ -15,7 +15,7 @@
   - 开运算 - Opening
   - 闭运算 - Closing
 
-## 问题四十一：Canny边缘检测：
+## Canny边缘检测：
 Canny边缘检测法过程为：
 
 1. 使用高斯滤波；
@@ -49,11 +49,6 @@ Canny边缘检测法过程为：
 
 请使用`numpy.pad()`来设置滤波器的`padding`吧！
 
-| 输入 (imori.jpg) | 输出(梯度幅值) (answers_image/answer_41_1.jpg) | 输出(梯度方向) (answers_image/answer_41_2.jpg) |
-| :--------------: | :--------------------------------------------: | :--------------------------------------------: |
-|  ![](imori.jpg)  |       ![](answers_image/answer_41_1.jpg)       |       ![](answers_image/answer_41_2.jpg)       |
-
-
 ### 第二步：边缘细化
 边缘梯度的非极大值抑制，顾名思义就是判断边缘梯度在沿着边缘方向的邻域内是否为极大值，不是极大值则去除其边缘标记，以达到边缘细化的目的。非极大值边缘细化的原理是根据边缘方向$\text{edge}(x,y)$的值，判断当前梯度若不大于其周围两个像素梯度，则设置其梯度为0。
    $$
@@ -65,16 +60,6 @@ Canny边缘检测法过程为：
    \end{cases}
    $$
 如果$\text{edge}(x,y)$和$\text{neighbor}(x,y)$不是最大值，则设置$\text{edge}(x,y)=0$。
-
-
-| 输入 (imori.jpg) | 输出 (answers_image/answer_42.jpg) |
-| :--------------: | :--------------------------------: |
-|  ![](imori.jpg)  |  ![](answers_image/answer_42.jpg)  |
-
-> 答案 
->
-> - Python >> [answers_py/answer_42.py](answers_py/answer_42.py)
-> - Python >> [answers_cpp/answer_42.cpp](answers_cpp/answer_42.cpp)
 
 ### 第三步：滞后阈值
 
@@ -92,15 +77,7 @@ Canny边缘检测法过程为：
 
 上面的算法就是Canny边缘检测算法了。
 
-| 输入 (imori.jpg) | 输出 (answers_image/answer_43.jpg) |
-| :--------------: | :--------------------------------: |
-|  ![](imori.jpg)  |  ![](answers_image/answer_43.jpg)  |
-
-> - 答案 
->   - Python >> [answers_py/answer_43.py](answers_py/answer_43.py)
->   - C++ >> [answers_cpp/answer_43.cpp](answers_cpp/answer_43.cpp)
-
-## 问题四十四：霍夫变换（Hough Transform）直线检测
+## 霍夫变换（Hough Transform）直线检测
 霍夫变换，是将坐标由直角座标系变换到极座标系，然后再根据数学表达式检测某些形状（如直线和圆）的方法。当直线上的点变换到极座标中的时候，会交于一定的$r$、$t$的点。这个点即为要检测的直线的参数。通过对这个参数进行逆变换，我们就可以求出直线方程。
 
 ### 第一步：霍夫变换
@@ -123,16 +100,7 @@ Canny边缘检测法过程为：
 
 这一次，使用`torino.jpg`来计算投票之后的表。使用如下参数进行 Canny 边缘检测：高斯滤波器$(5\times5,s = 1.4)$，$HT = 100$，$LT = 30$。
 
-| 输入 (thorino.jpg) |   输出 (answers/answer_44.jpg)   |
-| :----------------: | :------------------------------: |
-|  ![](thorino.jpg)  | ![](answers_image/answer_44.jpg) |
-
-> 答案 
->
-> - Python >> [answers_py/answer_44.py](answers_py/answer_44.py)
-> - C++ >> [answers_cpp/answer_44.cpp](answers_cpp/answer_44.cpp)
-
-###第二步：NMS
+### 第二步：NMS
 
 我们将在这里进行第2步。
 
@@ -143,15 +111,6 @@ Canny边缘检测法过程为：
 NMS 的算法如下：
 1. 在该表中，如果遍历到的像素的投票数大于其8近邻的像素值，则它不变。
 2. 如果遍历到的像素的投票数小于其8近邻的像素值，则设置为0。
-
-| 输入 (thorino.jpg) |   输出 (answers/answer_45.jpg)   |
-| :----------------: | :------------------------------: |
-|  ![](thorino.jpg)  | ![](answers_image/answer_45.jpg) |
-
-> 答案 
->
-> - Python >> [answers_py/answer_45.py](answers_py/answer_45.py)
-> - C++ >> [answers_cpp/answer_45.cpp](answers_cpp/answer_45.cpp)
 
 ### 第三步：霍夫逆变换
 
@@ -165,7 +124,3 @@ NMS 的算法如下：
    $$
 
 2. 对于每个局部最大点，使$y = 0-H -1$，$x = 0-W -1$，然后执行1中的逆变换，并在输入图像中绘制检测到的直线。请将线的颜色设置为红色$(R,G,B) = (255, 0, 0)$。
-
-| 输入 (thorino.jpg) |   输出 (answers/answer_46.jpg)   |
-| :----------------: | :------------------------------: |
-|  ![](thorino.jpg)  | ![](answers_image/answer_46.jpg) |
