@@ -257,7 +257,7 @@ True
 
 ![](assets/out_practice.jpg)
 
-回答例
+示例
 
 ```bash
 >>> import cv2
@@ -269,5 +269,3 @@ True
 102
 >>> 
 ```
-
-上面就是所有的 Tutorial 了。之后请一个一个地解决问题吧！
