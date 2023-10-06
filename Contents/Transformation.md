@@ -1,7 +1,7 @@
 # 图像变换
 [TOC]
 
-## 问题三十二：傅立叶变换（Fourier Transform）
+## 傅立叶变换（Fourier Transform）
 
 使用离散二维傅立叶变换（Discrete Fourier Transformation），将灰度化的`imori.jpg`表示为频谱图。然后用二维离散傅立叶逆变换将图像复原。
 
@@ -26,16 +26,8 @@ $$
 
 如果只是简单地使用`for`语句的话，计算量达到$128^4$，十分耗时。如果善用`NumPy`的化，则可以减少计算量（答案中已经减少到$128^2$）。
 
-| 输入 (imori.jpg) | 灰度化 (imori_gray.jpg) | 输出 (answers_image/answer_32.jpg) | 频谱图 (answers_image/answer_32_ps.py) |
-| :--------------: | :---------------------: | :--------------------------------: | :------------------------------------: |
-|  ![](imori.jpg)  |   ![](imori_gray.jpg)   |  ![](answers_image/answer_32.jpg)  |  ![](answers_image/answer_32_ps.jpg)   |
 
-> 答案 
->
-> - Python >> [answers_py/answer_32.py](answers_py/answer_32.py)
-> - C++ >> [answers_cpp/answer_32.cpp](answers_cpp/answer_32.cpp)
-
-## 问题三十三：傅立叶变换——低通滤波
+## 傅立叶变换——低通滤波
 
 将`imori.jpg`灰度化之后进行傅立叶变换并进行低通滤波，之后再用傅立叶逆变换复原吧！
 
@@ -47,45 +39,17 @@ $$
 
 在这里，假设从低频的中心到高频的距离为$r$，我们保留$0.5\ r$​的低频分量。
 
-| 输入 (imori.jpg) | 输出(answers_image/answer_33.jpg) |
-| :--------------: | :-------------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_33.jpg)  |
-
-> 答案
->
-> - Python >> [answers_py/answer_33.py](answers_py/answer_33.py)
-> - C++ >> [answers_cpp/answer_33.cpp](answers_cpp/answer_33.cpp)
-
-## 问题三十四：傅立叶变换——高通滤波
+## 傅立叶变换——高通滤波
 
 将`imori.jpg`灰度化之后进行傅立叶变换并进行高通滤波，之后再用傅立叶逆变换复原吧！
 
 在这里，我们使用可以去除低频部分，只保留高频部分的**高通滤波器**。假设从低频的中心到高频的距离为$r$，我们保留$0.2\ r$​的低频分量。
 
-| 输入 (imori.jpg) | 输出(answers_image/answer_34.jpg) |
-| :--------------: | :-------------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_34.jpg)  |
-
-> 答案
->
-> - Python >> [answers_py/answer_34.py](answers_py/answer_34.py)
-> - C++ >> [answers_cpp/answer_34.cpp](answers_cpp/answer_34.cpp)
-
-## 问题三十五：傅立叶变换——带通滤波
+## 傅立叶变换——带通滤波
 
 将`imori.jpg`灰度化之后进行傅立叶变换并进行带通滤波，之后再用傅立叶逆变换复原吧！
 
 在这里，我们使用可以保留介于低频成分和高频成分之间的分量的**带通滤波器**。在这里，我们使用可以去除低频部分，只保留高频部分的高通滤波器。假设从低频的中心到高频的距离为$r$，我们保留$0.1\  r$至$0.5\  r$的分量。  
 
-| 输入 (imori.jpg) | 输出(answers_image/answer_34.jpg) |
-| :--------------: | :-------------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_34.jpg)  |
-
-> 答案
->
-> - Python >> [answers_py/answer_35.py](answers_py/answer_35.py)
-> - C++ >> [answers_cpp/answer_35.cpp](answers_cpp/answer_35.cpp)
-
 ## PCA
-
-## MNF
+PCA(Principal Component Analysis)，即主成分分析方法，是一种使用最广泛的数据降维算法。PCA的主要思想是将n维特征映射到k维上，这k维是全新的正交特征也被称为主成分，是在原有n维特征的基础上重新构造出来的k维特征。PCA的工作就是从原始的空间中顺序地找一组相互正交的坐标轴，新的坐标轴的选择与数据本身是密切相关的。其中，第一个新坐标轴选择是原始数据中方差最大的方向，第二个新坐标轴选取是与第一个坐标轴正交的平面中使得方差最大的，第三个轴是与第1,2个轴正交的平面中方差最大的。依次类推，可以得到n个这样的坐标轴。通过这种方式获得的新的坐标轴，我们发现，大部分方差都包含在前面k个坐标轴中，后面的坐标轴所含的方差几乎为0。于是，我们可以忽略余下的坐标轴，只保留前面k个含有绝大部分方差的坐标轴。事实上，这相当于只保留包含绝大部分方差的维度特征，而忽略包含方差几乎为0的特征维度，实现对数据特征的降维处理。
