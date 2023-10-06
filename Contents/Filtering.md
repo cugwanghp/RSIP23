@@ -9,7 +9,7 @@
 # 图像滤波
 [TOC]
 
-## 问题九：高斯滤波（Gaussian Filter）
+## 高斯滤波（Gaussian Filter）
 
 使用高斯滤波器（$3\times3$大小，标准差$\sigma=1.3$）来对`imori_noise.jpg`进行降噪处理吧！
 
@@ -35,42 +35,19 @@ K=\frac{1}{16}\  \left[
   \right]
 $$
 
-| 输入（imori_noise.jpg) | 输出(answers_image/answer_9.jpg) |
-| :--------------------: | :------------------------------: |
-|  ![](imori_noise.jpg)  | ![](answers_image/answer_9.jpg)  |
-
-> 答案 
->
-> * Python >> [answers_py/answer_9.py](answers_py/answer_9.py)
-> * C++ >> [answers_cpp/answer_9.cpp](answers_cpp/answer_9.cpp)
-
-## 问题十：中值滤波（Median Filter）
+## 中值滤波（Median Filter）
 
 使用中值滤波器（$3\times3$大小）来对`imori_noise.jpg`进行降噪处理吧！
 
 中值滤波器是一种可以使图像平滑的滤波器。这种滤波器用滤波器范围内（在这里是$3\times3$）像素点的中值进行滤波，请在这里也采用Zero Padding。
 
-| 输入（imori_noise.jpg) | 输出(answers_image/answer_10.jpg) |
-| :--------------------: | :-------------------------------: |
-|  ![](imori_noise.jpg)  | ![](answers_image/answer_10.jpg)  |
-
-## 问题十一：均值滤波器
+## 均值滤波器
 
 使用$3\times3$的均值滤波器来进行滤波吧！
 
 均值滤波器使用网格内像素的平均值。
 
-| 输入 (imori.jpg) | 输出(answers_image/answer_11.jpg) |
-| :--------------: | :-------------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_11.jpg)  |
-
-> 答案
->
-> * Python >> [answers_py/answer_11.py](answers_py/answer_11.py)
-> * C++ >> [answers_cpp/answer_11.cpp](answers_cpp/answer_11.cpp)
-
-
-## 问题十二：Motion Filter
+## Motion Filter
 
 使用$3\times3$的Motion Filter来进行滤波吧。
 
@@ -85,16 +62,7 @@ $$
 \right]
 $$
 
-| 输入 (imori.jpg) | 输出(answers_image/answer_12.jpg) |
-| :--------------: | :-------------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_12.jpg)  |
-
-> 答案
->
-> - Python >> [answers_py/answer_12.py](answers_py/answer_12.py)
-> - C++ >> [answers_cpp/answer_12.cpp](answers_cpp/answer_12.cpp)
-
-## 问题十三：MAX-MIN滤波器
+## MAX-MIN滤波器
 
 使用MAX-MIN滤波器来进行滤波吧。
 
@@ -104,20 +72,7 @@ MAX-MIN滤波器使用网格内像素的最大值和最小值的差值对网格�
 
 边缘检测通常在灰度图像上进行。
 
-| 输入 (imori.jpg) | 输出(answers_image/answer_13.jpg) |
-| :--------------: | :-------------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_13.jpg)  |
-
-> 答案
->
-> - Python >> [answers_py/answer_13.py](answers_py/answer_13.py)
-> - C++ >> [answers_cpp/answer_13.cpp](answers_cpp/answer_13.cpp)
->
-
-
-## 问题十四：差分滤波器[^1]（Differential Filter）
-
-[^1]: 原文是“微分フィルタ”，对应的英文应该是“Differential Filter”。考虑到这里处理离散的变量，应该是“差分滤波器”？问题十七：Laplacian滤波器中的“二次微分”没有什么太大歧义就没作处理。
+## 差分滤波器（Differential Filter）
 
 使用$3\times3$的差分滤波器来进行滤波吧。
 
@@ -144,16 +99,7 @@ K=\left[
 \right]
 $$
 
-| 输入 (imori.jpg) | 输出・纵向 (answers/answer_14_v.jpg) | 输出・横向 (answers/answer_14_h.jpg) |
-| :--------------: | :----------------------------------: | :----------------------------------: |
-|  ![](imori.jpg)  |  ![](answers_image/answer_14_v.jpg)  |  ![](answers_image/answer_14_h.jpg)  |
-
-> 答案
->
-> - Python >>[ answers_py/answer_14.py](answers_py/answer_14.py)
-> - C++ >> [answers_cpp/answer_14.cpp](answers_cpp/answer_14.cpp)
-
-## 问题十五：Sobel滤波器
+## Sobel滤波器
 
 使用$3\times3$的Sobel滤波器来进行滤波吧。
 
@@ -180,16 +126,7 @@ K=\left[
 \right]
 $$
 
-| 输入 (imori.jpg) | 输出・纵向 (answers/answer_15_v.jpg) | 输出・横向 (answers/answer_15_h.jpg) |
-| :--------------: | :----------------------------------: | :----------------------------------: |
-|  ![](imori.jpg)  |  ![](answers_image/answer_15_v.jpg)  |  ![](answers_image/answer_15_h.jpg)  |
-
-> 答案
->
-> - Python >> [answers_py/answer_15.py](answers_py/answer_15.py)
-> - C++ >> [answers_cpp/answer_15.cpp](answers_cpp/answer_15.cpp)
-
-## 问题十六：Prewitt滤波器
+## Prewitt滤波器
 
 使用$3\times3$的Prewitt滤波器来进行滤波吧。
 
@@ -216,17 +153,7 @@ K=\left[
 \right]
 $$
 
-| 输入 (imori.jpg) | 输出・纵向 (answers/answer_16_v.jpg) | 输出・横向 (answers/answer_16_h.jpg) |
-| :--------------: | :----------------------------------: | :----------------------------------: |
-|  ![](imori.jpg)  |  ![](answers_image/answer_16_v.jpg)  |  ![](answers_image/answer_16_h.jpg)  |
-
-> 答案
->
-> - Python >> [answers_py/answer_16.py](answers_py/answer_16.py)
-> - C++ >> [answers_cpp/answer_16.cpp](answers_cpp/answer_16.cpp)
-
-
-## 问题十七：Laplacian滤波器
+## Laplacian滤波器
 
 使用Laplacian滤波器来进行滤波吧。
 
@@ -269,16 +196,7 @@ K=
 \right]
 $$
 
-| 输入 (imori.jpg) |   输出(answers/answer_17.jpg)    |
-| :--------------: | :------------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_17.jpg) |
-
-> 答案
->
-> - Python >> [answers_py/answer_17.py](answers_py/answer_17.py)
-> - C++ >> [answers_cpp/answer_17.cpp](answers_cpp/answer_17.cpp)
-
-## 问题十八：Emboss滤波器
+## Emboss滤波器
 
 使用Emboss滤波器来进行滤波吧。
 
@@ -294,20 +212,9 @@ K=
 \right]
 $$
 
-| 输入 (imori.jpg) |   输出(answers/answer_18.jpg)    |
-| :--------------: | :------------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_18.jpg) |
+## LoG滤波器
 
-> 答案
->
-> - Python >> [answers_py/answer_18.py](answers_py/answer_18.py)
-> - C++ >> [answers_cpp/answer_18.cpp](answers_cpp/answer_18.cpp)
-
-## 问题十九：LoG滤波器
-
-使用LoG 滤波器，来对`imori_noise.jpg`检测边缘吧！
-
- LoG即高斯-拉普拉斯（Laplacian of Gaussian）的缩写，使用高斯滤波器使图像平滑化之后再使用拉普拉斯滤波器使图像的轮廓更加清晰。
+LoG即高斯-拉普拉斯（Laplacian of Gaussian）的缩写，使用高斯滤波器使图像平滑化之后再使用拉普拉斯滤波器使图像的轮廓更加清晰。
 
 为了防止拉普拉斯滤波器计算二次微分会使得图像噪声更加明显，所以我们首先使用高斯滤波器来抑制噪声。
 
@@ -315,11 +222,3 @@ $$
 $$
 \text{LoG}(x,y)=\frac{x^2 + y^2 - s^2}{2 \  \pi \  s^6} \  e^{-\frac{x^2+y^2}{2\  s^2}}
 $$
-
-| 输入 (imori_noise.jpg) | 输出(answers_image/answer_19.jpg) |
-| :--------------------: | :-------------------------------: |
-|  ![](imori_noise.jpg)  | ![](answers_image/answer_19.jpg)  |
-
-
-
-
