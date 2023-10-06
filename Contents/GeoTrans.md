@@ -1,5 +1,5 @@
 # 几何变换
-## 问题二十五：最邻近插值（ Nearest-neighbor Interpolation ）
+## 最邻近插值（ Nearest-neighbor Interpolation ）
 
 使用最邻近插值将图像放大$1.5$倍吧！
 
@@ -11,11 +11,8 @@ $$
 I'(x,y) = I([\frac{x}{a}], [\frac{y}{a}])
 $$
 
-| 输入 (imori.jpg) | 输出 (answers_image/answer_25.jpg) |
-| :--------------: | :--------------------------------: |
-|  ![](imori.jpg)  |  ![](answers_image/answer_25.jpg)  |
 
-## 问题二十六：双线性插值（ Bilinear Interpolation ）
+## 双线性插值（ Bilinear Interpolation ）
 
 使用双线性插值将图像放大$1.5$倍吧！
 
@@ -35,11 +32,9 @@ d_x = \frac{x'}{a} - x\\
   d_y = \frac{y'}{a} - y\\
   I'(x',y') = (1-d_x)\  (1-d_y)\  I(x,y) + d_x\  (1-d_y)\  I(x+1,y) + (1-d_x)\  d_y\  I(x,y+1) + d_x\  d_y\  I(x+1,y+1)
 $$
-| 输入 (imori.jpg) | 输出(answers_image/answer_26.jpg) |
-| :--------------: | :-------------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_26.jpg)  |
 
-## 问题二十七：双三次插值（ Bicubic Interpolation ）
+
+## 双三次插值（ Bicubic Interpolation ）
 
 使用双三次插值将图像放大$1.5$倍吧！
 
@@ -74,11 +69,7 @@ $$
 I'(x', y')=\frac{1}{\sum\limits_{j=1}^4\ \sum\limits_{i=1}^4\ h(d_{xi})\ h(d_{yj})}\ \sum\limits_{j=1}^4\ \sum\limits_{i=1}^4\ I(x+i-2,y+j-2)\ h(d_{xi})\ h(d_{yj})
 $$
 
-| 输入 (imori.jpg) | 输出 (answers_image/answer_27.jpg) |
-| :--------------: | :--------------------------------: |
-|  ![](imori.jpg)  |  ![](answers_image/answer_27.jpg)  |
-
-## 问题二十八：仿射变换（ Afine Transformations ）
+## 仿射变换（ Afine Transformations ）
 仿射变换利用$3\times3$的矩阵来进行图像几何变换。变换的方式有平行移动、放大缩小、旋转、倾斜等。
 原图像像素点坐标记为$(x,y)$，变换后的图像像素点坐标记为$(x',y')$。图像放大缩小矩阵为下式：
 $$
@@ -199,18 +190,11 @@ y\\
 \right)
 $$
 
-| 输入 (imori.jpg) | 输出 (answers_image/answer_28.jpg) |
-| :--------------: | :--------------------------------: |
-|  ![](imori.jpg)  |  ![](answers_image/answer_28.jpg)  |
-
 ### 放大缩小
 
 1. 使用仿射变换，将图片在$x$方向上放大$1.3$倍，在$y$方向上缩小至原来的$\frac{4}{5}$。
 2. 在上面的条件下，同时在$x$方向上向右平移$30$（$+30$），在$y$方向上向上平移$30$（$-30$）。
 
-| 输入 (imori.jpg) | 输出 (1) (answers_image/answer_29_1.jpg) | 输出 (2) (answers_image/answer_29_2.jpg) |
-| :--------------: | :--------------------------------------: | :--------------------------------------: |
-|  ![](imori.jpg)  |    ![](answers_image/answer_29_1.jpg)    |    ![](answers_image/answer_29_2.jpg)    |
 
 ### 旋转
 1. 使用仿射变换，逆时针旋转$30$度。
@@ -240,10 +224,6 @@ y\\
 \end{matrix}
 \right)
 $$
-
-| 输入 (imori.jpg) | 输出 (1) (answers_image/answer_30_1.jpg) | 输出 (2) (answers_image/answer_30_2.jpg) |
-| :--------------: | :--------------------------------------: | :--------------------------------------: |
-|  ![](imori.jpg)  |    ![](answers_image/answer_30_1.jpg)    |    ![](answers_image/answer_30_2.jpg)    |
 
 ### 倾斜
 
@@ -302,7 +282,3 @@ $$
   \end{matrix}
   \right]
   $$
-
-| 输入 (imori.jpg) | 输出 (1) (answers_image/answer_31_1.jpg) | 输出 (2) (answers_image/answer_31_2.jpg) | 输出 (3) (answers_image/answer_31_3.jpg) |
-| :--------------: | :--------------------------------------: | :--------------------------------------: | :--------------------------------------: |
-|  ![](imori.jpg)  |    ![](answers_image/answer_31_1.jpg)    |    ![](answers_image/answer_31_2.jpg)    |    ![](answers_image/answer_31_3.jpg)    |
