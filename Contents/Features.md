@@ -1,6 +1,7 @@
 # 特征提取
+[TOC]
 
-## 问题八十一：Hessian角点检测[^0]
+## Hessian角点检测[^0]
 
 [^0]: 见[这里](http://vision.stanford.edu/teaching/cs231a_autumn1112/lecture/lecture11_detectors_descriptors_cs231a.pdf)。
 
@@ -23,12 +24,7 @@ $$
 
 解答中，角点是$\det(H)$为极大值，并且大于$\max(\det(H))\cdot 0.1$的点。
 
-| 输入 (thorino.jpg) | 输出(answers/answer_81.jpg) |
-| :----------------: | :-------------------------: |
-|  ![](thorino.jpg)  | ![](answers/answer_81.jpg)  |
-
-
-## 问题八十二：Harris角点检测
+## Harris角点检测
 Harris 角点检测算法如下：
 
 1. 对图像进行灰度化处理；
@@ -52,7 +48,7 @@ Harris 角点检测算法如下：
 * 高斯滤波器：$k=3, \sigma=3$；
 *  $K = 0.04, \text{th} = 0.1$。
 
-## 问题六十六：方向梯度直方图（HOG）
+## 方向梯度直方图（HOG）
 HOG（Histogram of Oriented Gradients）是一种表示图像特征量的方法。特征量是表示图像的状态等的向量集合。
 
 在图像识别（图像是什么）和检测（物体在图像中的哪个位置）中，我们需要：
@@ -107,19 +103,11 @@ HOG（Histogram of Oriented Gradients）是一种表示图像特征量的方法�
 
 为了使示例答案更容易看出效果，`gra`是彩色的。此外，`mag`被归一化至$[0,255]$。
 
-| 输入 (imori.jpg) | 梯度幅值(answers/answer_66_mag.jpg) | 梯度方向(answers/answer_66_gra.jpg) |
-| :--------------: | :---------------------------------: | :---------------------------------: |
-|  ![](imori.jpg)  |   ![](answers/answer_66_mag.jpg)    |   ![](answers/answer_66_gra.jpg)    |
-
-答案 >> [answers/answer_66.py](answers/answer_66.py)
-
 ### 第二步：梯度直方图
 
 在这里完成 HOG 的第4步。
 
-取$N=8$，$8 \times 8$个像素为一个 cell，将每个 cell 的梯度幅值加到梯度方向的index处。[^2]
-
-[^2]: 我尽力翻译了，上面那句话看不懂的可以看[这里](https://www.jianshu.com/p/395f0582c5f7)的给出的说明。
+取$N=8$，$8 \times 8$个像素为一个 cell，将每个 cell 的梯度幅值加到梯度方向的index处。
 
 解答为按照下面的顺序排列索引对应的直方图：
 $$
@@ -130,12 +118,6 @@ $$
 \end{matrix}
 $$
 
-| 输入 (imori.jpg) |           输出(answers/answer_67.png)           |
-| :--------------: | :---------------------------------------------: |
-|  ![](imori.jpg)  | <img src="answers/answer_67.png" width="400px"> |
-
-答案 >> [answers/answer_67.py](answers/answer_67.py)
-
 ### 第三步：直方图归一化
 
 在这里完成 HOG 的第5步。
@@ -145,12 +127,6 @@ $$
 h(t)=\frac{h(t)}{\sqrt{\sum\ h(t)+\epsilon}}
 $$
 在此，我们得到HOG特征量。
-
-| 输入 (imori.jpg) |           输出(answers/answer_68.png)           |
-| :--------------: | :---------------------------------------------: |
-|  ![](imori.jpg)  | <img src="answers/answer_68.png" width="400px"> |
-
-答案 >> [answers/answer_68.py](answers/answer_68.py)
 
 ### 第四步：可视化特征量
 
