@@ -8,8 +8,9 @@
 -->
 
 #  图像分类
+[TOC]
 
-## 问题八十八：k-平均聚类算法（k -means Clustering）
+## k-平均聚类算法（k -means Clustering）
 
 问题84至问题87的图像识别任务是需要预期输出的简单监督学习（supervised-training）中的一种简单情况。在这里我们通过不需要预期输出的无监督学习（unsupervised-training）来进行图像分类。
 
@@ -50,8 +51,6 @@ Grabity
 2247.      1338.       434.     10822.      4506.       622.    ]]
 ```
 
-答案 >> [answers/answer_88.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_88.py)
-
 ### 第二步：聚类（Clustering）
 
 在这里完成算法的步骤4和步骤5，进行聚类吧！
@@ -62,17 +61,6 @@ Grabity
 
 需要注意的是，k-平均聚类算法最初分配的类别对最后的结果有很大的影响。并且，数据量小的情况下极有可能失败。也就是说，数据量越大最后得到的数据分布越准确。
 
-答案：
-
-```bash
-test_akahara_1.jpg  Pred: 0
-test_akahara_2.jpg  Pred: 1
-test_madara_1.jpg  Pred: 0
-test_madara_2.jpg  Pred: 0
-```
-
-答案 >> [answers/answer_89.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_89.py)
-
 ### 第三步：调整初期类别
 
 使用k-平均聚类算法将8张`train@@@.jpg`完美地聚类吧！
@@ -81,23 +69,7 @@ test_madara_2.jpg  Pred: 0
 
 这只能通过反复试验来完成。
 
-答案：
-
-```bash
-train_akahara_1.jpg  Pred: 1
-train_akahara_2.jpg  Pred: 1
-train_akahara_3.jpg  Pred: 1
-train_akahara_4.jpg  Pred: 1
-train_akahara_5.jpg  Pred: 1
-train_madara_1.jpg  Pred: 0
-train_madara_2.jpg  Pred: 0
-train_madara_3.jpg  Pred: 0
-train_madara_4.jpg  Pred: 0
-train_madara_5.jpg  Pred: 0
-```
-
-答案 >> [answers/answer_90.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_90.py)
-
 ## ISODATA
+K-means算法需要人为选择聚类的个数，而迭代自组织聚类算法(ISODATA)不需要。
 
-## 监督分类
+ISODATA在K-means算法的基础上，增加对聚类结果的合并和分裂两个操作，当聚类结果某一类中样本数太少，或两个类间的距离太近，或样本类别远大于设定类别数时，进行合并，当聚类结果某一类中样本数太多，或某个类内方差太大，或样本类别远小于设定类别数时，进行分裂。
