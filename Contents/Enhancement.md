@@ -19,10 +19,6 @@ $$
 Z' = \frac{Z_{max}}{S} \  \sum\limits_{i=0}^z\ h(i)
 $$
 
-| 输入 (imori.jpg) |   输出 (answers/answer_23_1.jpg)   | 直方图(answers_image/answer_23_2.png) |
-| :--------------: | :--------------------------------: | :-----------------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_23_1.jpg) |  ![](answers_image/answer_23_2.png)   |
-
 ## 直方图匹配 (Histogram matching)
 直方图均衡化是直方图匹配的一个特例，直方图均衡化的目标直方图为均匀分布的直方图，若目标直方图来自于另一幅图像时，直方图调整的过程即为直方图匹配。直方图匹配相比直方图均衡化，只需将均一的目标直方图累计分布换作一幅图像的直方图即可。
 
@@ -77,11 +73,6 @@ $$
 $$
 换言之，如果使${S_b}^2={w_0}\ {w_1}\ (M_0 - M_1)^2$最大，就可以得到最好的二值化阈值$t$。
 
-| 输入（imori.jpg) | 输出 ($\text{th} = 127$​) (answers_image/answer_4.jpg) |
-| :--------------: | :----------------------------------------------------: |
-|  ![](imori.jpg)  |            ![](answers_image/answer_4.jpg)             |
-
-
 ## 平均池化（Average Pooling）
 
 将图片按照固定大小网格分割，网格内的像素值取网格内所有像素的平均值。
@@ -94,14 +85,6 @@ v=\frac{1}{|R|}\  \sum\limits_{i=1}^R\ v_i
 $$
 把大小为$128\times128$的`imori.jpg`使用$8\times8$的网格做平均池化。
 
-| 输入（imori.jpg) | 输出(answers_image/answer_7.jpg) |
-| :--------------: | :------------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_7.jpg)  |
-
 ## 最大池化（Max Pooling）
 
 网格内的值不取平均值，而是取网格内的最大值进行池化操作。
-
-| 输入（imori.jpg) | 输出(answers_image/answer_8.jpg) |
-| :--------------: | :------------------------------: |
-|  ![](imori.jpg)  | ![](answers_image/answer_8.jpg)  |
