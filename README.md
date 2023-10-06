@@ -103,7 +103,6 @@
 - HSV变换
 - 傅里叶变换
 - PCA变换
-- MNF变换
 
 #### 5. [边缘检测](./Contents/EdgeDetection.md)
 - Canny边缘检测
@@ -127,9 +126,7 @@
 #### 7. [图像分类](./Contents/Classification.md)
 - K-Means
 - ISODATA
-- 
-
-
+  
 ### 综合题（2-3人一组，完成其中1题）
 #### 1. 几何校正
 - 需求
