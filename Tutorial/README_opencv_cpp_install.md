@@ -223,8 +223,3 @@ int main(int argc, const char* argv[]){
 
   return 0;
 }
-```
-
-[答案](./answer.cpp)
-
-上面就是所有的 Tutorial 了。之后请一个一个地解决问题吧！
