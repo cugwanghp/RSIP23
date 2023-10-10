@@ -27,7 +27,7 @@ RGB颜色空间顾名思义，就是要将一个颜色以R-8bit、G-8bit、B-8bi
 根据图像数据->颜色值的映射关系，创建一个QImage对象，参考[使用RasterIO快速显示图像](https://blog.csdn.net/liminlu0314/article/details/7613894)
 
 - 3.绘制图像
-将QImage对象绑定到某个控件，即可完成显示，参考[ImageViewer](../src/imageviewer.rar) 和 [遥感图像显示Demo](https://download.csdn.net/download/liminlu0314/4337917)
+将QImage对象绑定到某个控件，即可完成显示，参考[ImageViewer](../docs/src/imageviewer.rar) 和 [遥感图像显示Demo](https://download.csdn.net/download/liminlu0314/4337917)
 
 ## Tips
 - 不同图像数据类型如何显示，如12bit 或 16bit图像如何转换
@@ -37,4 +37,3 @@ RGB颜色空间顾名思义，就是要将一个颜色以R-8bit、G-8bit、B-8bi
 - 如何实现ENVI多级窗口显示（不作要求，思考）
 
 ---
-[Home](https://wanghp119.github.io/RSIP/) | [Return](#实习<三>遥感图像的显示) |  [Prev](./D2_RasterIO.md) | [Next](./D4_Preprocess.md)
