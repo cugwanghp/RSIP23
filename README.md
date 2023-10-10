@@ -163,19 +163,19 @@
 ---
 
 ### 2.功能参考
-- [遥感图像数据I/O](./contents/D2_RasterIO.md)
+- [遥感图像数据I/O](./Contents/D2_RasterIO.md)
 	要求实现常用遥感图像数据（GeoTiff，IMG，Pix，jpeg，bmp、Envi）的读、写操作，读取并显示遥感图像的基本信息及统计信息。
 
-- [遥感图像的显示](./contents/D3_ImageDisplay.md)
+- [遥感图像的显示](./Contents/D3_ImageDisplay.md)
 	要求实现遥感图像的灰度显示、彩色合成显示、具备放大、缩小、屏幕适应的显示方式，具备线性拉伸、均衡化等增强显示方式。
 
-- [遥感影像预处理](./contents/D4_Preprocess.md)
+- [遥感影像预处理](./Contents/D4_Preprocess.md)
 	要求实现图像滤波、PCA分析、影像融合等功能。
 
-- [遥感影像几何校正](./contents/D5_Geocorrection.md)
+- [遥感影像几何校正](./Contents/D5_Geocorrection.md)
 	实现但不限于多项式校正的几何校正方法，包括：控制点选取（读取）、几何校正模型计算、重采样内插等功能。
 
-- [遥感影像分类](./contents/D6_Classification.md)
+- [遥感影像分类](./Contents/D6_Classification.md)
 	实现监督分类和非监督分类的算法至少各一种。
 
 - [遥感图像处理过程](https://blog.csdn.net/liminlu0314/article/details/8757262)
