@@ -62,7 +62,7 @@
 - [Opencv C++ Tutorial](./Tutorial/README_opencv_cpp_install.md)
 - [Opencv Python Tutorial](./Tutorial/README_opencv_py_install.md)
 
-### 算法题（要求每人独立至少完成2题）
+### 算法题
 #### 1. [图像增强与显示](./Contents/Enhancement.md)
 - 直方图
   - 直方图标准化
